@@ -1,0 +1,1668 @@
+{
+	"info": {
+		"_postman_id": "3738bc4d-7b08-4d5c-9b0f-cbf04deac4cf",
+		"name": "chef-to-ho",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Customer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/5eb1e21101bedd2504158b2b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"5eb1e21101bedd2504158b2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"abc@co\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/edit/5ebb23501d134c50bcafd3c4",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"edit",
+						"5ebb23501d134c50bcafd3c4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "94fb017e-ae22-43e9-8b48-6d35301fa4fe",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"ali\",\n\t\"lastName\": \"abc\",\n\t\"email\": \"alii.engineerr@gmail.com\",\n\t\"password\":\"testtest\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/delete/5ebb2377266ba528f0af1282",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"delete",
+						"5ebb2377266ba528f0af1282"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Customer's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/status/5eb1e21101bedd2504158b2b",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"status",
+						"5eb1e21101bedd2504158b2b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Admins",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Sub Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bf604d7a-6d2d-4199-83a8-bd1178895178",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\":\"ross\",\n\t\"lastName\": \"ross\",\n\t\"email\": \"a@afffgg.co\",\n\t\"password\": \"!whahhasbs\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Admin",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/5eb1ddda2e480f3f946cc83c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"5eb1ddda2e480f3f946cc83c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Admin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"abc@gmail.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/edit/5eb58ef00c5da30544ff8a39",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"edit",
+						"5eb58ef00c5da30544ff8a39"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Admin",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/delete/5eb1ddda2e480f3f946cc83c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"delete",
+						"5eb1ddda2e480f3f946cc83c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Admin's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/status/5eb1ddda2e480f3f946cc83c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"status",
+						"5eb1ddda2e480f3f946cc83c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Restaurant Owners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Restaurant Owner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/5eb4469b4d6d0d1f70f1ce4c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"5eb4469b4d6d0d1f70f1ce4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Restaurant Owner",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"jane\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/edit/5eb4469b4d6d0d1f70f1ce4c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"edit",
+						"5eb4469b4d6d0d1f70f1ce4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Restaurant Owner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "167751d3-55d2-4400-b3ea-22f397a02134",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"firstName\": \"black\",\n\t\"lastName\": \"ross\",\n\t\"email\": \"abccbc.co\",\n\t\"password\": \"%%%gghh\",\n\t\"businessDetail\": \"whateverrr\",\n\t\"phoneNumber\": \"0333222222\",\n\t\"addresses\": [ {\"address\": \"abccc\"} ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Restaurant Owner",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/delete/5eb4469b4d6d0d1f70f1ce4c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"delete",
+						"5eb4469b4d6d0d1f70f1ce4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Restaurant Owner's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/status/5eb4469b4d6d0d1f70f1ce4c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"status",
+						"5eb4469b4d6d0d1f70f1ce4c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/order/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/order/5eb440232e2c7881943f377d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"5eb440232e2c7881943f377d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"orderDetails\": \"burger with sauce $5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/order/edit/5eda87320406ba13d4ff53c9",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"edit",
+						"5eda87320406ba13d4ff53c9"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/order/delete/5eb440232e2c7881943f377d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"delete",
+						"5eb440232e2c7881943f377d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Order's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/order/status/5eb440232e2c7881943f377d",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						"status",
+						"5eb440232e2c7881943f377d"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Seed Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/seed",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"seed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"Discount\": \"60%\",\n\t\"orderDetails\": \"gngjnjfggg\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/order/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"order",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Customer",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3acfc770-36c4-4567-9e2a-7fc55474e07b",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"email\": \"abbcb@hh\",\n\t\"password\":\"kkfkjfj\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Restaurant Owner",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c7583f52-552e-4f88-87aa-8a9df04db85c",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"vvb@hotmail.com\",\n\t\"password\": \"%%%gghh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login Admin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "65ec7a45-3a14-4b61-9b5f-e0007229bafa",
+						"exec": [
+							"if(pm.response.code === 200){",
+							"    pm.environment.set('authToken', pm.response.json().data.token)",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\t\"email\": \"a@agg.co\",\r\n\t\"password\": \"!whahhasbs\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password Restaurant Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"vvb@gmakkil.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/forgotPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password Restaurant Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dri\":\"5eb58ade885c443ef4ace9a4\",\n\t\"password\": \"#abbccc765\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/reset",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"a@ggkkga.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/forgotPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"dri\":\"5eb58ef00c5da30544ff8a39\",\n\t\"password\":\"abcccc322\"\n\t\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/reset",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forgot Password Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/forgotPassword",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"forgotPassword"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reset Password Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/reset",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"reset"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customer All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/all_orders/5eb7001875778c3b2c797896",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"all_orders",
+						"5eb7001875778c3b2c797896"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Menu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"pizza\",\n\t\"shortDesc\": \"pizza with pepperoni\",\n\t\"quantity\": 15,\n\t\"price\": \"$6\",\n\t\"variation\": [{ \"name\": \"sizes\", \"type\": 1, \"items\": [{ \"name\": \"small\", \"price\": \"$5\"},{ \"name\": \"regular\", \"price\": \"$5\"}]}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"burgers\",\n\t\"shortDesc\": \"abbhduhuhf\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/category/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"shortDesc\": \"Sbdbdhddd\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/category/edit/5ebf02239c7bbc059c86d826",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"edit",
+						"5ebf02239c7bbc059c86d826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Category",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/category/delete/5ebf02239c7bbc059c86d826",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"delete",
+						"5ebf02239c7bbc059c86d826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Category's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/category/status/5ebf02239c7bbc059c86d826",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"status",
+						"5ebf02239c7bbc059c86d826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Category",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/category/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/category/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/category/5ebf02239c7bbc059c86d826",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"category",
+						"5ebf02239c7bbc059c86d826"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Menu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"shortDesc\": \"pizza with pepperoni and mushrooms\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/edit/5ebf007b4282b628c0c93a42",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"edit",
+						"5ebf007b4282b628c0c93a42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Menu",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/delete/5ebf007b4282b628c0c93a42",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"delete",
+						"5ebf007b4282b628c0c93a42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Menu's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/status/5ebf007b4282b628c0c93a42",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"status",
+						"5ebf007b4282b628c0c93a42"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Menu",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/F:/Documents/Node/node-course-images/philly.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/menu/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"menu",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/customer/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"customer",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Admin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/backstage/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"backstage",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Restaurant Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant_owner/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant_owner",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Image Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/image",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Upload Cover Image Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/image/cover",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"image",
+						"cover"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Restaurant",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"delfrio\",\n\t\"tagline\": \"abcc\",\n\t\"shortDesc\": \"new in town\",\n\t\"longDesc\": \"abbcchhdhdhdhdhh\",\n\t\"discountAvailable\": true,\n\t\"discountPercent\": \"30%\",\n\t\"deliveryAvailable\": true\n}\n\t",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Restaurant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"shortDesc\": \"new in town ny\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/edit/5edf9a545c83335904b5b970",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"edit",
+						"5edf9a545c83335904b5b970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Restaurant Preferences",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmaXJzdE5hbWUiOiJibGFjayIsImxhc3ROYW1lIjoicm9zcyIsImVtYWlsIjoiYWJjY2JjQGRkLmNvIiwiaWQiOiI1ZWU4YWMyNTI4MzBlODRhYjBiZDdhOGUiLCJ1c2VyVHlwZSI6InJlc3RhdXJhbnRfb3duZXIiLCJpYXQiOjE1OTIzMDY3NDksImV4cCI6MTU5MjMxMzE0OX0.ZLOWN1_BFCW5uL5dZy9j4EFN3xy0RbFg7A4PZOEHJI8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"delivery\": true,\n\t\"deliveryFee\": \"$5\",\n\t\"dineIn\": true,\n\t\"takeAway\":  true,\n\t\"minOrder\": 10\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/edit/preferences/5ee8ac252830e84ab0bd7a90",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"edit",
+						"preferences",
+						"5ee8ac252830e84ab0bd7a90"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Restaurant",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/delete/5edf9a545c83335904b5b970",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"delete",
+						"5edf9a545c83335904b5b970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Restaurant's Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/status/5edf9a545c83335904b5b970",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"status",
+						"5edf9a545c83335904b5b970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Restaurants",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Single Restaurant",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/5edf9a545c83335904b5b970",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"5edf9a545c83335904b5b970"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Restaurant All Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/api/v1/restaurant/all_orders/5edf9a545c83335904b5b970",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"restaurant",
+						"all_orders",
+						"5edf9a545c83335904b5b970"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{authToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fa2096be-50e7-4545-b186-544cc55c8b00",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "cd6d4f83-dc54-4536-95eb-bc6a5048807c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

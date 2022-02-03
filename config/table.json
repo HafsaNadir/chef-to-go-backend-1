@@ -1,0 +1,10 @@
+{
+	"Admin": "Admin",
+	"Menu" : "Menu", 
+	"Order" : "Order",
+	"User" : "User",
+	"Restaurant" : "Restaurant",
+	"Category": "Category",
+	"Package": "Package"
+
+}
